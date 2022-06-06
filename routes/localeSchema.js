@@ -15,7 +15,7 @@ router.get('/', (res) => {
     res.resolve(localeSchemaService.createLocaleSchema(req.body));
   })
   
-  router.put('/:id', authenticate, (req, res) => {
+  router.put('/:id', (req, res) => {
     res.resolve(localeSchemaService.updateLocaleSchema(req.params.id, req.body));
   })
   

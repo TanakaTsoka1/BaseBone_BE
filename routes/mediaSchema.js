@@ -15,7 +15,7 @@ router.get('/', (res) => {
     res.resolve(mediaSchemaService.createMediaSchema(req.body));
   })
   
-  router.put('/:id', authenticate, (req, res) => {
+  router.put('/:id', (req, res) => {
     res.resolve(mediaSchemaService.updateMediaSchema(req.params.id, req.body));
   })
   

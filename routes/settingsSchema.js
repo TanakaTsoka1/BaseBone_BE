@@ -15,7 +15,7 @@ router.get('/', (res) => {
     res.resolve(settingsSchemaService.createSettingsSchema(req.body));
   })
   
-  router.put('/:id', authenticate, (req, res) => {
+  router.put('/:id', (req, res) => {
     res.resolve(settingsSchemaService.updateSettingsSchema(req.params.id, req.body));
   })
   

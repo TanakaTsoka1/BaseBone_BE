@@ -15,7 +15,7 @@ router.get('/', (res) => {
     res.resolve(locksModelService.createLocksModel(req.body));
   })
   
-  router.put('/:id', authenticate, (req, res) => {
+  router.put('/:id', (req, res) => {
     res.resolve(locksModelService.updateLocksModel(req.params.id, req.body));
   })
   

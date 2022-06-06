@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     res.resolve(categoriesService.createCategories(req.body));
   })
   
-  router.put('/:id', authenticate, (req, res) => {
+  router.put('/:id', (req, res) => {
     res.resolve(categoriesService.updateAssignment(req.params.id, req.body));
   })
   
