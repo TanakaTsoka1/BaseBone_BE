@@ -3,20 +3,20 @@ const router = express.Router();
 
 const categoriesService = require("../services/categoriesService");
 
-router.get("/", (req, res) => {
-  res.resolve(categoriesService.getCategories());
+router.get("/", async (req, res) => {
+  res.send( await categoriesService.getCategories());
 });
 
-router.get("/:id", (req, res) => {
-  res.resolve(categoriesService.getCategory(req.params.id));
+router.get("/:id", async (req, res) => {
+  res.send( await categoriesService.getCategory(req.params.id));
 });
 
-router.post("/", (req, res) => {
-  res.resolve(categoriesService.createCategories(req.body));
+router.post("/", async (req, res) => {
+  res.send( await categoriesService.createCategories(req.body));
 });
 
-router.put("/:id", (req, res) => {
-  res.resolve(categoriesService.updateAssignment(req.params.id, req.body));
+router.put("/:id", async (req, res) => {
+  res.send( await categoriesService.updateCategories(req.params.id, req.body));
 });
 
 module.exports = router;

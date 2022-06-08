@@ -2,8 +2,8 @@ const Categories = require("../models/categories");
 
 const createCategories = async (params) => {
   try {
-    const result = Categories({ ...params }).save();
-    return result;
+    await Categories({ ...params }).save();
+    return "200";
   } catch (err) {
     return err;
   }
@@ -11,12 +11,12 @@ const createCategories = async (params) => {
 
 const updateCategories = async (id, params) => {
   try {
-    const result = Categories.findByIdAndUpdate(
+      await Categories.findByIdAndUpdate(
       id,
       { ...params },
       { new: true }
     );
-    return result;
+    return "200";
   } catch (err) {
     return err;
   }
@@ -24,7 +24,7 @@ const updateCategories = async (id, params) => {
 
 const getCategories = async () => {
   try {
-    const result = Categories.find();
+    const result = await Categories.find();
     return result;
   } catch (err) {
     return err;
@@ -33,7 +33,8 @@ const getCategories = async () => {
 
 const getCategory = async (id) => {
   try {
-    const result = Categories.findOne(id);
+    const result = await Categories.findById(id);
+    console.log("Q ", result);
     return result;
   } catch (err) {
     return err;

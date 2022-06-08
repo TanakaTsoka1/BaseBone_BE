@@ -40,13 +40,15 @@ const Categories = new Schema({
       type: Boolean
   },
   published_at: {
-      type: timestamp
+    type: Date
   },
   created_at: {
-      type: timestamp
+    type: Date,
+    default: Date.now
   },
   updated_at: {
-      type: timestamp
+    type: Date,
+    default: Date.now
   }
 }, { timestamps: true })
 
