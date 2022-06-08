@@ -11,11 +11,7 @@ const createCategories = async (params) => {
 
 const updateCategories = async (id, params) => {
   try {
-      await Categories.findByIdAndUpdate(
-      id,
-      { ...params },
-      { new: true }
-    );
+    await Categories.findByIdAndUpdate(id, { ...params }, { new: true });
     return "200";
   } catch (err) {
     return err;
@@ -34,7 +30,6 @@ const getCategories = async () => {
 const getCategory = async (id) => {
   try {
     const result = await Categories.findById(id);
-    console.log("Q ", result);
     return result;
   } catch (err) {
     return err;
