@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://admin:basebone@cluster0.rsc5keo.mongodb.net/?retryWrites=true&w=majority', {
+require('dotenv').config()
+
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('Successfully connected to MongoDB'))
