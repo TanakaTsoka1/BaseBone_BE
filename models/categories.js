@@ -9,27 +9,85 @@ const Categories = new Schema({
     type: String
   },
   locale: {
-    type: String,
-    ref: 'LocaleSchema',
+    language_iso: {
+      type: String
+    },
+    title: {
+      type: String
+    },
+    seo_title: {
+      type: String
+    },
+    summary: {
+      type: String
+    },
+    seo_summary: {
+      type: String
+    },
+    description: {
+      type: String
+    },
+    seo_description: {
+      type: String
+    },
+    specify_seo_values: {
+        type: String
+    }
   },
   media: {
-    type: String,
-    ref: 'MediaSchema',
+    icon: {
+      type: String
+    },
+    potrait: [{
+      type: String
+    }],
+    landscape: [{
+      type: String
+    }],
+    square: [{
+      type: String
+    }]
   },
   settings: {
-    type: String,
-    ref: 'SettingsSchema',
+    is_premium: {
+      type: Boolean
+    },
+    excluded_domains: [{
+      type: String
+    }],
+    excluded_countries_iso: [{
+      type: String
+    }],
+    exclued_network_endpoints: [{
+      type: Number
+    }],
+    age_rating: {
+        type: String
+    }
   },
   locks: {
-    type: String,
-    ref: 'LocksModel',
+    is_locked_for_editing: {
+      type: String
+    },
+    current_editor: {
+      type: String
+    },
+    is_locked_for_moderation_process: {
+      type: String
+    },
+    is_locked_for_backend_process: {
+      type: String
+    },
+    current_backend_process: {
+      type: String
+    }
   },
   parent_id: {
     type: String,
   },
-  ancestor_ids: {
+  ancestor_ids: [{
       type: String
-  },
+  }],
   product: {
       type: String
   },
